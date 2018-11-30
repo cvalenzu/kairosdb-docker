@@ -34,16 +34,16 @@ kairosdb.jetty.address=0.0.0.0
 kairosdb.jetty.static_web_root=webroot
 
 # To enable SSL uncomment the following lines and specify the path to the keyStore and its password and port
-#kairosdb.jetty.ssl.port=443
-#kairosdb.jetty.ssl.protocols=TLSv1, TLSv1.1, TLSv1.2
-#kairosdb.jetty.ssl.cipherSuites=TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA
-#kairosdb.jetty.ssl.keystore.path=
-#kairosdb.jetty.ssl.keystore.password=
+kairosdb.jetty.ssl.port=443
+kairosdb.jetty.ssl.protocols=TLSv1, TLSv1.1, TLSv1.2
+kairosdb.jetty.ssl.cipherSuites=TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA
+kairosdb.jetty.ssl.keystore.path=${SSL_KEYSTORE_PATH}
+kairosdb.jetty.ssl.keystore.password=${SSL_KEYSTORE_PASSWORD}
 
 #To enable http basic authentication uncomment the following lines and specify
 #the user name and password for authentication.
-#kairosdb.jetty.basic_auth.user=
-#kairosdb.jetty.basic_auth.password=
+kairosdb.jetty.basic_auth.user=${AUTH_USER}
+kairosdb.jetty.basic_auth.password=${AUTH_PASSWORD}
 
 # To enable thread pooling uncomment the following lines and specify the limits
 #kairosdb.jetty.threads.queue_size=6000

@@ -61,7 +61,7 @@ os.environ["CASSANDRA_PORT"] = os.getenv("CASSANDRA_PORT", "9042")
 # name of keyspace to crate (the keyspace is created once on first start).
 os.environ["CASSANDRA_KEYSPACE"] = os.getenv("CASSANDRA_KEYSPACE", "kairosdb")
 # the replication strategy to use for the Cassandra keyspace (only used the
-# first time Kairos starts up and needs to create the schema in Cassandra). 
+# first time Kairos starts up and needs to create the schema in Cassandra).
 os.environ["CASSANDRA_REPLICATION"] = os.getenv("CASSANDRA_REPLICATION", "{'class': 'SimpleStrategy','replication_factor' : 1}")
 # the maximum concurrency for a single metric query (that needs to run
 # queries over several partitions)
@@ -77,6 +77,15 @@ os.environ["CASSANDRA_WRITE_CONSISTENCY_LEVEL"] = os.getenv("CASSANDRA_WRITE_CON
 # time-to-live in seconds for inserted datapoints (if not set data will be
 # kept forever)
 os.environ["CASSANDRA_DATAPOINT_TTL"] = os.getenv("CASSANDRA_DATAPOINT_TTL", "31536000")
+
+#SSL Configuration
+os.environ["SSL_KEYSTORE_PATH"] = os.getenv("SSL_KEYSTORE_PATH","/ssl/keystore.jks")
+os.environ["SSL_KEYSTORE_PASSWORD"] = os.getenv("SSL_KEYSTORE_PASSWORD", "")
+
+#AUTH Configuration
+os.environ["AUTH_USER"] = os.getenv("AUTH_USER","admin")
+os.environ["AUTH_PASSWORD"] = os.getenv("AUTH_PASSWORD", "")
+
 
 nodes=[h + ":" +  os.environ["CASSANDRA_PORT"]
        for h in os.environ['CASSANDRA_HOSTS'].split(',')]

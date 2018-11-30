@@ -1,8 +1,8 @@
 #!/bin/bash
 
-set -e 
+set -e
 
-REPOSITORY=elastisys/kairosdb
+REPOSITORY=cvalenzu/kairosdb
 TAG=1.2.1
 IMAGE="${REPOSITORY}:${TAG}"
 
